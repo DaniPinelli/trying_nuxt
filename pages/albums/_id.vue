@@ -27,15 +27,11 @@ export default {
         }
     },
 
-    created() {
-      axios.get(`${env.endpoint}/albums/${this.$route.params.id}`)
-      .then(albumResponse => {
+    created: async function () {
+        let albumResponse = await axios.get(`${env.endpoint}/albums/${this.$route.params.id}`);
         this.album = albumResponse.data;
-    });
-    axios.get(`${env.endpoint}/albums/${this.$route.params.id}/photos`)
-      .then(photosResponse => {
+        let photosResponse = await axios.get(`${env.endpoint}/albums/${this.$route.params.id}/photos`);
         this.photos = photosResponse.data;
-    })
     }
 }
 </script>
@@ -44,8 +40,5 @@ export default {
     .container{
         text-align: center;
     }
-    header{
-        margin-top: 100px;
-        margin-bottom: 100px;
-    }
+    
 </style>

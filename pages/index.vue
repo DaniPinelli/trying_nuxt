@@ -1,6 +1,9 @@
 <template lang="html">
 <div class="container" >
-    <h1 class="title" >Albums de la página</h1>
+    <header>
+        <h1 class="title" >Albums de la página</h1>
+    </header>
+    
     <div class="columns is-multiline">
         <AlbumCard :album="album" v-for="album in albums" :key="album.id" />
     </div>
@@ -23,15 +26,14 @@ export default {
             albums: []
         };
     },
-    created() {
-        axios.get(`${env.endpoint}/albums`)
-            .then(response => {
+    created: async function () {
+       
+           let response = await  axios.get(`${env.endpoint}/albums`) 
                 this.albums = response.data;
-            })
-            .catch(error => {
-                console.log(error);
-            });
-    },
+        
+           
+            }
+    
 }
 </script>
 
