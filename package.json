@@ -1,0 +1,16 @@
+{
+  "name": "trying_nuxt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nuxt"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vue/composition-api": "^1.4.0",
+    "nuxt": "^2.15.8"
+  }
+}
