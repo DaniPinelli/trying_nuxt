@@ -1,13 +1,27 @@
 <template lang="html">
-    <h1>Hello World</h1>
+    <h1>{{message}}</h1>
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
-
-export default ({
-    name: 'Index'
-})
+import axios from 'axios';
+import env from '../config/env';
+export default {
+    name: 'Index',
+    data() {
+        return {
+            message: ''
+        };
+    },
+    created() {
+        axios.get(`${env.endpoint}/albums`)
+            .then(response => {
+                this.message = response.status;
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    },
+}
 </script>
 
 <style scoped>
