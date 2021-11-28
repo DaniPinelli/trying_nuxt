@@ -1,8 +1,16 @@
 [
   {
+    "name": "albums-id",
+    "path": "/albums/:id?",
+    "component": "E:\\\\Development\\\\Vue\\\\trying_nuxt\\\\pages\\\\albums\\\\_id.vue",
+    "chunkName": "pages/albums/_id",
+    "_name": "_23acf222"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "E:\\\\Development\\\\Vue\\\\trying_nuxt\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_3bc65caa"
   }
 ]
